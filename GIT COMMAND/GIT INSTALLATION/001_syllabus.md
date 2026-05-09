@@ -1,8 +1,9 @@
 # Complete Git Commands Syllabus
 
-# 1. Git Installation Commands
+# 1. Git Introduction Commands
 - git --version
 - git help
+- git help command-name
 - which git
 - where git
 
@@ -14,8 +15,10 @@
 - git config --local
 - git config --system
 - git config --list
-- git config --unset
 - git config --show-origin
+- git config --unset
+- git config user.name
+- git config user.email
 
 ---
 
@@ -26,15 +29,14 @@
 - git clone
 - git clone --bare
 - git clone --mirror
+- git clone --depth
+- git clone -b
 
 ---
 
 # 4. Repository Information Commands
 - git status
-- git remote -v
-- git branch
-- git branch -a
-- git branch -r
+- git status -s
 - git rev-parse
 - git show-ref
 - git symbolic-ref
@@ -66,6 +68,7 @@
 - git log
 - git log --oneline
 - git log --graph
+- git log --all
 - git log --stat
 - git log -p
 - git show
@@ -82,14 +85,16 @@
 
 ---
 
-# 9. Undo Commands
+# 9. Undo & Recovery Commands
 - git reset
 - git reset --soft
 - git reset --mixed
 - git reset --hard
 - git revert
-- git checkout
 - git restore
+- git checkout
+- git reflog
+- git fsck
 
 ---
 
@@ -101,7 +106,7 @@
 
 ---
 
-# 11. File Rename & Move Commands
+# 11. Rename & Move Commands
 - git mv
 
 ---
@@ -119,6 +124,7 @@
 - git branch --show-current
 - git branch --track
 - git branch --set-upstream-to
+- git branch --unset-upstream
 
 ---
 
@@ -144,15 +150,16 @@
 # 15. Merge Conflict Commands
 - git status
 - git diff
+- git add
 - git merge --abort
 - git merge --continue
-- git add
 - git mergetool
 
 ---
 
 # 16. Remote Repository Commands
 - git remote
+- git remote -v
 - git remote add
 - git remote remove
 - git remote rename
@@ -167,20 +174,28 @@
 - git push -u origin main
 - git push --all
 - git push --tags
+- git push --force
+- git push --force-with-lease
 - git push origin --delete
 
 ---
 
-# 18. Pull & Fetch Commands
+# 18. Pull Commands
 - git pull
 - git pull origin main
+- git pull --rebase
+
+---
+
+# 19. Fetch Commands
 - git fetch
+- git fetch origin
 - git fetch --all
 - git fetch --tags
 
 ---
 
-# 19. Tag Commands
+# 20. Tag Commands
 - git tag
 - git tag -a
 - git tag -d
@@ -189,7 +204,7 @@
 
 ---
 
-# 20. Stash Commands
+# 21. Stash Commands
 - git stash
 - git stash save
 - git stash list
@@ -200,7 +215,7 @@
 
 ---
 
-# 21. Rebase Commands
+# 22. Rebase Commands
 - git rebase
 - git rebase -i
 - git rebase --continue
@@ -209,14 +224,14 @@
 
 ---
 
-# 22. Cherry-Pick Commands
+# 23. Cherry-Pick Commands
 - git cherry-pick
 - git cherry-pick --continue
 - git cherry-pick --abort
 
 ---
 
-# 23. Clean Commands
+# 24. Clean Commands
 - git clean
 - git clean -f
 - git clean -fd
@@ -225,15 +240,17 @@
 
 ---
 
-# 24. Repository Maintenance Commands
+# 25. Repository Maintenance Commands
 - git gc
 - git gc --aggressive
 - git prune
+- git repack
+- git prune-packed
 - git fsck
 
 ---
 
-# 25. Repository Backup Commands
+# 26. Backup & Archive Commands
 - git bundle
 - git archive
 - git archive --format zip
@@ -241,27 +258,18 @@
 
 ---
 
-# 26. Object Inspection Commands
+# 27. Object Inspection Commands
 - git cat-file
 - git verify-pack
 - git count-objects
 
 ---
 
-# 27. Search Commands
+# 28. Search & Inspection Commands
 - git grep
-- git bisect
 - git blame
-
----
-
-# 28. Collaboration Commands
-- git pull
-- git push
-- git fetch
-- git merge
-- git rebase
-- git branch -a
+- git bisect
+- git show
 
 ---
 
@@ -280,12 +288,16 @@
 
 ---
 
-# 31. Git Alias Commands
-- git config --global alias.name
+# 31. Alias Commands
+- git config --global alias.st
+- git config --global alias.co
+- git config --global alias.br
+- git config --global alias.cm
+- git config --global alias.lg
 
 ---
 
-# 32. Git Hooks Commands
+# 32. Hook Commands
 - pre-commit
 - post-commit
 - pre-push
@@ -293,21 +305,21 @@
 
 ---
 
-# 33. Git Debugging Commands
+# 33. Debugging Commands
 - GIT_TRACE=1
 - GIT_TRACE_PACKET=1
 - git var -l
 
 ---
 
-# 34. Git Security Commands
+# 34. Security Commands
 - git verify-commit
 - git verify-tag
 - git config credential.helper
 
 ---
 
-# 35. Git Large File Commands
+# 35. Git LFS Commands
 - git lfs install
 - git lfs track
 - git lfs pull
@@ -315,7 +327,7 @@
 
 ---
 
-# 36. Git Workflow Commands
+# 36. Git Flow Commands
 - git flow init
 - git flow feature start
 - git flow feature finish
@@ -324,7 +336,7 @@
 
 ---
 
-# 37. GitHub Related Commands
+# 37. GitHub CLI Commands
 - gh auth login
 - gh repo create
 - gh repo clone
@@ -346,133 +358,95 @@
 
 ---
 
-# 40. Advanced Git Commands
-- git reflog
-- git bisect
-- git filter-branch
-- git replace
-- git notes
-- git rerere
-
----
-
-# 41. Git Recovery Commands
-- git reflog
-- git fsck
-- git reset
-- git checkout
-- git restore
-
----
-
-# 42. Git Inspection Commands
-- git show
-- git log
-- git diff
-- git blame
-- git grep
-
----
-
-# 43. Git Performance Commands
-- git gc
-- git repack
-- git prune-packed
-
----
-
-# 44. Git Networking Commands
-- git daemon
-- git instaweb
-- git request-pull
-
----
-
-# 45. Git Server Commands
-- git init --bare
-- git daemon
-- git update-server-info
-
----
-
-# 46. Git Patch Commands
+# 40. Patch Commands
 - git format-patch
 - git apply
 - git am
 
 ---
 
-# 47. Git Notes Commands
-- git notes add
-- git notes show
-- git notes remove
-
----
-
-# 48. Git Replace Commands
-- git replace
-- git replace -d
-
----
-
-# 49. Git Sparse Checkout Commands
+# 41. Sparse Checkout Commands
 - git sparse-checkout init
 - git sparse-checkout set
 
 ---
 
-# 50. Git Credential Commands
+# 42. Credential Commands
 - git credential fill
 - git credential approve
 - git credential reject
 
 ---
 
-# 51. Git Workflow Models
-- Feature Branch Workflow
-- Git Flow Workflow
-- Forking Workflow
-- Trunk-Based Development
+# 43. Networking Commands
+- git daemon
+- git request-pull
+- git instaweb
 
 ---
 
-# 52. Git Best Practices
+# 44. Server Commands
+- git init --bare
+- git daemon
+- git update-server-info
+
+---
+
+# 45. Advanced Git Commands
+- git filter-branch
+- git replace
+- git notes add
+- git notes show
+- git notes remove
+- git rerere
+
+---
+
+# 46. Git Internal Commands
+- git hash-object
+- git update-index
+- git write-tree
+- git commit-tree
+- git rev-list
+
+---
+
+# 47. Git Workflow Models
+- Feature Branch Workflow
+- Git Flow Workflow
+- Forking Workflow
+- Trunk-Based Workflow
+
+---
+
+# 48. Git Best Practices
 - Frequent Commits
 - Small Branches
 - Pull Before Push
 - Clear Commit Messages
-- Branch Naming Standards
 - Conflict Prevention
+- Branch Naming Standards
 - Repository Cleanup
 
 ---
 
-# 53. Git Internal Concepts
-- Blob Objects
-- Tree Objects
-- Commit Objects
-- Tag Objects
-- HEAD Pointer
-- Index
-- Refs
-- Reflog
-
----
-
-# 54. Git Architecture
+# 49. Git Architecture Topics
 - Working Directory
 - Staging Area
 - Local Repository
 - Remote Repository
+- HEAD Pointer
+- Refs
+- Index
+- Reflog
 
 ---
 
-# 55. Git Troubleshooting
+# 50. Git Troubleshooting Topics
 - Merge Conflicts
 - Detached HEAD
 - Lost Commits
 - Broken Rebase
 - Push Rejections
 - Authentication Errors
-
-```
+- Repository Corruption
