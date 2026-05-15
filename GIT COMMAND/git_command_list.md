@@ -450,3 +450,9 @@
 - Push Rejections
 - Authentication Errors
 - Repository Corruption
+
+# Git Quit:
+- Quit Without Saving
+- Save and Quit
+- Exit Git Log
+- Exit Git Diff
